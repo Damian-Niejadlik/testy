@@ -12,6 +12,10 @@ def prepare_data(file: str):
     return elephant_number, schema, elephant_dict
 
 
+# print(prepare_data("slo1.in"))
+time_start = time.time()
+
+
 def sort_by_schema(elephant_number, schema, elephant_dict):
     power = 0
     numbers_in_wrong_position = []
@@ -42,14 +46,12 @@ def sort_by_schema(elephant_number, schema, elephant_dict):
                 numbers_in_wrong_position.pop(
                     numbers_in_wrong_position.index(elephant_number[right_position_of_element])
                 )
+        # print(len(numbers_in_wrong_position))
     return power
 
 
-a, b, c = prepare_data("slo8a.in")
-
-time_start = time.time()
-
-print(f"Power needed to move elephant: {sort_by_schema(a, b, c)}\n")
+a, b, c = prepare_data("slo3.in")
+print(f"\nPower needed to move elephant: {sort_by_schema(a, b, c)}\n")
 
 time_end = time.time()
 
